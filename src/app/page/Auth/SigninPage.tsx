@@ -12,7 +12,7 @@ export default function SigninPage() {
       const listKey = ["email", "password"];
       let objParams: any = {}
 
-      listKey?.map((obj: any) => {
+      listKey?.forEach((obj: any) => {
         objParams[obj] = formRef.current[obj]?.value
       })
        serviceLogin(objParams)
