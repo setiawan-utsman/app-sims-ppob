@@ -1,0 +1,60 @@
+.fs {
+    &-10 {
+      font-size: 0.71429rem !important;
+    }
+    &-11{
+      font-size: 0.78571rem !important;
+    }
+    &-12 {
+      font-size: 0.857rem !important;
+    }
+    &-14 {
+      font-size: 1rem !important;
+    }
+    &-15 {
+      font-size: 1.071rem !important;
+    }
+    &-16 {
+      font-size: 1.143rem !important;
+    }
+    &-17 {
+      font-size: 1.214rem !important;
+    }
+    &-18 {
+      font-size: 1.286rem !important;
+    }
+    &-19 {
+      font-size: 1.357rem !important;
+    }
+    &-20 {
+      font-size: 1.429rem !important;
+    }
+    &-24 {
+      font-size: 1.714rem !important;
+    }
+    &-28 {
+      font-size: 2rem !important;
+    }
+    &-32 {
+      font-size: 2.28571rem !important;
+    }
+  }
+  
+  .fw {
+    &-400 {
+      font-weight: 400;
+    }
+    &-500 {
+      font-weight: 500;
+    }
+    &-600 {
+      font-weight: 600;
+    }
+    &-700 {
+      font-weight: 700;
+    }
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
