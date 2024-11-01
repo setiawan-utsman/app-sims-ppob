@@ -10,6 +10,6 @@
 
 FROM node:18.12.0 AS build
 WORKDIR /usr/src/app
-RUN npm install
+RUN npm install --force
 RUN npm run build
 COPY . /usr/src/app/
