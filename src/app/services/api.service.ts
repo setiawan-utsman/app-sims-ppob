@@ -1,5 +1,6 @@
 import axios from "axios"
 import { pick, replace } from 'lodash'
+import store from "../../store"
 
 const requestApi = (responseFields: any = null, baseUrl = undefined) => {
     let sourceRequest: any = {}
@@ -10,8 +11,18 @@ const requestApi = (responseFields: any = null, baseUrl = undefined) => {
     })
   
     /** HANDLE AXIOS REQUEST */
+    // axiosInstance.interceptors.request.use(async (config: any) => {
+    //   // Removed Bearer token logic
+    //   return config
+    // })
+
     axiosInstance.interceptors.request.use(async (config: any) => {
-      // Removed Bearer token logic
+      const { credentials } = store.getState().auth
+  
+      if (credentials?.access) {
+        config.headers.Authorization = `Bearer ${credentials.access}`
+      }
+  
       return config
     })
   

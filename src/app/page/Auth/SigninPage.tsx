@@ -5,8 +5,11 @@ import { useNavigate } from 'react-router-dom';
 import { postRequest } from '../../services/main.service';
 import { get } from 'lodash';
 import { toast, ToastContainer } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../../store/reducers/auth';
 
 export default function SigninPage() {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const formRef = useRef<any>({})
     const [message, setMessage] = React.useState<any>();
@@ -28,7 +31,6 @@ export default function SigninPage() {
             const dt = get(req, 'data')
             const message = get(req, 'message')
             if (Boolean(dt)) {
-                navigate('/dashboard')
                 toast.success(message, {
                 position: "top-right",
                 autoClose: 4000,
@@ -39,6 +41,12 @@ export default function SigninPage() {
                 progress: undefined,
                 theme: "light",
                 });
+                dispatch(
+                    loginUser({
+                      access: dt?.token,
+                    }),
+                  )
+                  navigate('/topup')
             }
 
         } catch (e) {

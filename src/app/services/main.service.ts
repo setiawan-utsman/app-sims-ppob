@@ -8,4 +8,13 @@ const postRequest = ({ path, params, sourceToken }: any) => {
     )
   }
 
-  export { postRequest }
+  const getAll = (path: any = null, params: any = {}, sourceToken: any) => {
+    return requestApi().request({
+      url: path,
+      method: 'GET',
+      params: params,
+      cancelToken: sourceToken, // <-- IMPORTANT!
+    })
+  }
+
+  export { postRequest, getAll }
