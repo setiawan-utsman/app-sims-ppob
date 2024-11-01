@@ -1,6 +1,3 @@
-// import { dataEncryption, dataDecryption } from './security.helper';
-// import { isJson } from './data.helper';
-
 export function getItem(key: string, defaultValue: any = null) {
   try {
     const LsData = localStorage.getItem(key);
